@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">TLPAndroidWear</string>
+    <string name="score">Match Scoreboard</string>
+    <string name="teama">Team A</string>
+    <string name="teamb">Team B</string>
+    <string name="action_settings">Settings</string>
+
+</resources>

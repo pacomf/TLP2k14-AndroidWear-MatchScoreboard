@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.wearable.view.BoxInsetLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".WatchPrincipalActivity">
+
+    <TextView
+        android:text="@string/score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/counter"/>
+
+    <TextView
+        android:text="@string/teama"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:textColor="@android:color/holo_blue_dark"
+        android:layout_marginTop="35dp"
+        android:layout_marginLeft="10dp"
+        android:id="@+id/teama"/>
+
+    <TextView
+        android:text="0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:textColor="@android:color/holo_blue_dark"
+        android:layout_marginTop="70dp"
+        android:layout_marginLeft="35dp"
+        android:id="@+id/scorea"/>
+
+    <Button
+        android:layout_marginTop="100dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:id="@+id/adda"
+        android:layout_marginLeft="2dp"
+        android:text="+"/>
+
+    <Button
+        android:layout_marginTop="100dp"
+        android:layout_below="@+id/scorea"
+        android:layout_marginLeft="40dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:id="@+id/suba"
+        android:text="-"/>
+
+    <TextView
+        android:text="@string/teamb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:textColor="@android:color/holo_red_dark"
+        android:layout_marginTop="35dp"
+        android:layout_marginLeft="110dp"
+        android:id="@+id/teamb"/>
+
+    <TextView
+        android:text="0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:textColor="@android:color/holo_red_dark"
+        android:layout_marginTop="70dp"
+        android:layout_marginLeft="130dp"
+        android:id="@+id/scoreb"/>
+
+    <Button
+        android:layout_marginTop="100dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:id="@+id/addb"
+        android:layout_marginLeft="102dp"
+        android:text="+"/>
+
+    <Button
+        android:layout_marginTop="100dp"
+        android:layout_below="@+id/scorea"
+        android:layout_marginLeft="140dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:id="@+id/subb"
+        android:text="-"/>
+
+
+</android.support.wearable.view.BoxInsetLayout>

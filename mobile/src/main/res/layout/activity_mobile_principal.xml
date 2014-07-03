@@ -1,0 +1,104 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context=".MobilePrincipalActivity">
+
+    <TextView
+        android:text="@string/score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="32dp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/counter"/>
+
+    <TextView
+        android:text="@string/teama"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30dp"
+        android:textColor="@android:color/holo_blue_dark"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/counter"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="35dp"
+        android:id="@+id/teama"/>
+
+    <TextView
+        android:text="0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30dp"
+        android:textColor="@android:color/holo_blue_dark"
+        android:layout_marginTop="40dp"
+        android:layout_below="@+id/teama"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="70dp"
+        android:id="@+id/scorea"/>
+
+    <Button
+        android:layout_marginTop="40dp"
+        android:layout_below="@+id/scorea"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/adda"
+        android:layout_marginLeft="15dp"
+        android:text="+"/>
+
+    <Button
+        android:layout_marginTop="40dp"
+        android:layout_below="@+id/scorea"
+        android:layout_toRightOf="@+id/adda"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/suba"
+        android:text="-"/>
+
+    <TextView
+        android:text="@string/teamb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30dp"
+        android:textColor="@android:color/holo_red_dark"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/counter"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="35dp"
+        android:id="@+id/teamb"/>
+
+    <TextView
+        android:text="0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30dp"
+        android:textColor="@android:color/holo_red_dark"
+        android:layout_marginTop="40dp"
+        android:layout_below="@+id/teamb"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="70dp"
+        android:id="@+id/scoreb"/>
+
+    <Button
+        android:layout_marginTop="40dp"
+        android:layout_below="@+id/scoreb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/addb"
+        android:layout_toLeftOf="@+id/subb"
+        android:text="+"/>
+
+    <Button
+        android:layout_marginTop="40dp"
+        android:layout_below="@+id/scoreb"
+        android:layout_marginRight="15dp"
+        android:layout_width="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_height="wrap_content"
+        android:id="@+id/subb"
+        android:text="-"/>
+
+</RelativeLayout>
