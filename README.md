@@ -1,4 +1,5 @@
-TLP2k14-AndroidWear-MatchScoreboard
+TLP2k14 AndroidWear
+MatchScoreboard App
 ===================================
 
 ENGLISH: Demo Application to see the performance of "Android Wear" presented in TLP-Innova talk from GDG Tenerife. The mechanism of the application is to be a sports scoreboard that referees do not need outside help to keep score. For example in basketball games.
