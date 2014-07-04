@@ -39,6 +39,7 @@
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:id="@+id/adda"
+        android:visibility="gone"
         android:layout_marginLeft="2dp"
         android:text="+"/>
 
@@ -48,6 +49,7 @@
         android:layout_marginLeft="40dp"
         android:layout_width="40dp"
         android:layout_height="40dp"
+        android:visibility="gone"
         android:id="@+id/suba"
         android:text="-"/>
 
@@ -76,6 +78,7 @@
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:id="@+id/addb"
+        android:visibility="gone"
         android:layout_marginLeft="102dp"
         android:text="+"/>
 
@@ -85,6 +88,7 @@
         android:layout_marginLeft="140dp"
         android:layout_width="40dp"
         android:layout_height="40dp"
+        android:visibility="gone"
         android:id="@+id/subb"
         android:text="-"/>
 

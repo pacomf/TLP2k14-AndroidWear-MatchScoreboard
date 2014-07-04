@@ -48,6 +48,7 @@ public class WatchPrincipalActivity extends InsetActivity {
         Log.d(TAG, "Updating count to: " + teama + "-" + teamb);
     }
 
+    // Función que se lanza cuando la aplicación del SmartWatch está corriendo en primer plano
     @Override
     public void onReadyForContent() {
         setContentView(R.layout.activity_watch_principal);

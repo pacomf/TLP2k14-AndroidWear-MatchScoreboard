@@ -22,17 +22,26 @@ import com.google.android.gms.wearable.PutDataMapRequest;
 import com.google.android.gms.wearable.PutDataRequest;
 import com.google.android.gms.wearable.Wearable;
 
-
+/*
+ * Activity Principal de la aplicación Movil
+ * Clase encargada de mostrar el marcador y gestionar todos los eventos de sumar y restar puntos
+ *
+ */
 public class MobilePrincipalActivity extends Activity {
 
 
+    // Cogemos como nombre del TAG usando para los mensajes de Log, el nombre de esta misma clase.
     private static final String TAG = MobilePrincipalActivity.class.getSimpleName();
+    // Objeto que nos comunicará con Google Play Services que es el encargado de gestionar todas las comunicaciones entre el SmartWatch y el Móvil.
     private GoogleApiClient apiClient;
+    // Variables para tener almacenadas las puntuaciones en cada momento de ambos equipos, El Equipo A y el Equipo B
     private int scorea, scoreb;
+    // Botones para modificar el marcador, Sumar y Restar puntos al equipo A y B.
     private Button addScoreA_btn;
     private Button addScoreB_btn;
     private Button subScoreA_btn;
     private Button subScoreB_btn;
+    // Contenedores de Texto para mostrar las puntuaciones de ambos equipos.
     private TextView mTextViewScoreA, mTextViewScoreB;
 
     @Override
@@ -85,6 +94,8 @@ public class MobilePrincipalActivity extends Activity {
         ensureConnected();
     }
 
+    // Para habilitar todos los botones (ponerlos visibles, están invisibles por defecto)
+    // Se habilitarán cuando exista conexión entre el SmartWatch y el Movil
     private void setVisibilityAllButtons(){
         subScoreB_btn.setVisibility(View.VISIBLE);
         subScoreA_btn.setVisibility(View.VISIBLE);
@@ -93,6 +104,7 @@ public class MobilePrincipalActivity extends Activity {
 
     }
 
+    // Función encargada de ver si existe comunicación entre el SmartWatch y el Movil... sino hay conexión, crea un nuevo canal de comunicación para establecerla
     private void ensureConnected() {
         if (apiClient != null && apiClient.isConnected()) {
             setVisibilityAllButtons();
@@ -128,12 +140,16 @@ public class MobilePrincipalActivity extends Activity {
         }
         return super.onOptionsItemSelected(item);
     }
+
+    // Función que se lanza cuando se crea una nueva vía de comunicación, un canal, entre el SmartWatch y el Movil
     private final GoogleApiClient.ConnectionCallbacks onConnectedListener = new GoogleApiClient.ConnectionCallbacks() {
         @Override
         public void onConnected(Bundle bundle) {
             Log.d(TAG, "Connected, start sharing data.");
             scorea=0;
             scoreb=0;
+            // Activamos el Listener que recibirá todos los cambios del contenedor de datos que usamos para compartir información,
+            // o sea, se activará cada vez que el SmartWatch envíe algo al Móvil.
             Wearable.DataApi.addListener(apiClient, onDataChangedListener);
             setVisibilityAllButtons();
         }
@@ -144,6 +160,8 @@ public class MobilePrincipalActivity extends Activity {
         }
     };
 
+    // Evento que se lanza cuando el SmartWatch ha modificado los datos que estamos compartiendo, o sea
+    // Envía información el SmartWatch al Móvil
     public DataApi.DataListener onDataChangedListener = new DataApi.DataListener() {
         @Override
         public void onDataChanged(DataEventBuffer dataEvents) {
@@ -165,6 +183,7 @@ public class MobilePrincipalActivity extends Activity {
         }
     };
 
+    // Función encargada en Segundo Plano de actualizar los marcadores y mostrarlos por pantalla
     private Runnable onNewCount(final int teama, final int teamb) {
         return new Runnable() {
             @Override
@@ -185,6 +204,8 @@ public class MobilePrincipalActivity extends Activity {
 
     private final Handler handler = new Handler();
 
+    // Función encargada de modificar los datos compartidos con el SmartWatch, o sea
+    // Enví info del Smartphone al SmartWatch
     private void sendCount(final int teama, final int teamb) {
         PutDataMapRequest dataMap = PutDataMapRequest.create("/count");
         dataMap.getDataMap().putInt("scorea", teama);
@@ -195,6 +216,7 @@ public class MobilePrincipalActivity extends Activity {
         Log.d(TAG, "Updating count to: " + teama + "-" + teamb);
     }
 
+    // Evento encargado de gestionar una conexión NO exitosa.
     private final GoogleApiClient.OnConnectionFailedListener onConnectionListener = new GoogleApiClient.OnConnectionFailedListener() {
         @Override
         public void onConnectionFailed(ConnectionResult connectionResult) {
